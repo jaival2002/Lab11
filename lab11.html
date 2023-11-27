@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookshelf Management System</title>
+    <link rel="stylesheet" href="style.css"> <!-- Adding an external CSS stylesheet --> 
+</head>
+<!-- Book search feature search container -->
+<!-- GPT Prompt: how to create an HTML dynamic content display section for displaying search results, such as a list of books.-->
+<body>
+    <div class="search-container"> <!-- Search results are dynamically generated -->
+        <input type="text" id="searchInput" placeholder="Search by title or author">
+        <button id="searchButton">Search</button>
+    </div>
+<!-- Container for presenting the list of books returned by the search -->
+    <div id="booksList" class="books-list"></div>
+<!--GPT Prompt: Provide instructions on how to structure an HTML section to display a user's stored items, such as a personal bookshelf, including headings and content regions.-->
+    <div id="myBookshelf" class="my-bookshelf"> <!-- A user's bookshelf container -->
+        <h2>My Favourite Books (Bookshelf)</h2>
+        <div id="bookshelfList"></div>
+    </div>
+
+    <script src="lab11.js"></script> <!-- Adding a link to an external JavaScript file -->
+</body>
+</html>
