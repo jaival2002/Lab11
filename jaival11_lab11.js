@@ -60,14 +60,24 @@ function booksDisplay(books) {
 
 // GPT Prompt: Demonstrate how to write a JavaScript function that toggles the visibility of an element's information in an HTML page.
 // Toggles the visibility of book information.
+
 function toggleDetails(button) {
-    const details = button.nextElementSibling;
-    while(!(details.classList.contains("details"))) {
-        details = details.nextElementSibling;
+    // Find the nearest parent element with the 'book-item' class.
+    const bookItem = button.closest('.book-item');
+
+    // Find the details div within this book item.
+    const details = bookItem.querySelector('.details');
+
+    // Toggle the information display.
+    if (details.style.display === 'none' || details.style.display === '') {
+        details.style.display = 'block';
+        button.textContent = 'Hide Details';
+    } else {
+        details.style.display = 'none';
+        button.textContent = 'Show Details';
     }
-    details.style.display = details.style.display === 'block' ? 'none' : 'block';
-    button.textContent = details.style.display === 'block' ? 'Hide Details' : 'Show Details';
 }
+
 // GPT Prompt: Describe a JavaScript function that adds a selected item to a list based on local storage and adjusts the display accordingly.
 // Adds a book to the bookshelf and stores it in local storage.
 function addToBookshelf(book) {
